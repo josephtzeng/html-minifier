@@ -317,7 +317,7 @@ function cleanAttributeValue(tag, attrName, attrValue, options, attrs) {
     });
   }
   else if (attrValue && options.customAttrCollapse && options.customAttrCollapse.test(attrName)) {
-    attrValue = attrValue.replace(/\n+|\r+|\s{2,}/g, '');
+    attrValue = attrValue.replace(/\s+/g, ' ');
   }
   else if (tag === 'script' && attrName === 'type') {
     attrValue = trimWhitespace(attrValue.replace(/\s*;\s*/g, ';'));
